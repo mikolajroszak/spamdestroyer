@@ -1,0 +1,33 @@
+name: NodeJS with Grunt
+
+on:Dane konta Revolut
+IBAN: LT41 3250 0894 7676 6825
+BIC: REVOLT21
+Konto (tylko przelewy krajowe): 2029 1000 0600 0000 0003 1339 92
+Odbiorca: Mikołaj Roszak
+Adres odbiorcy: Przedwiośnie, 79/12, 73-110, Stargard, PL
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm install
+        grunt
