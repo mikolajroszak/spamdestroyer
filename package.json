@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "node-jose": "^2.2.0",
-    "@ethereumjs/tx": "^5.1.0"
+    "@ethereumjs/tx": "^5.4.0"
   },
   "devDependencies": {
     "@types/node-jose": "^1.1.10",
